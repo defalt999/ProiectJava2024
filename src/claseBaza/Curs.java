@@ -16,25 +16,17 @@ public class Curs {
 
     @Override
     public String toString() {
-        return "Curs{" +
-                "id=" + id +
-                ", nume='" + nume + '\'' +
-                ", descriere='" + descriere + '\'' +
-                ", profesor=" + profesor +
-                ", studenti=" + studenti +
-                ", note=" + note +
-                ", an=" + an +
-                '}';
+        return id+" "+nume+" "+descriere+" | Profesor: "+profesor.getNume()+" "+profesor.getPrenume();
     }
 
-    public Curs(int id, String nume, String descriere, Profesor profesor) {
+    public Curs(int id, String nume, String descriere, Profesor profesor,int an) {
         this.id = id;
         this.nume = nume;
         this.descriere = descriere;
         this.profesor = profesor;
         this.studenti = new HashSet<>();
         this.note = new HashMap<>();
-        this.an = 0;
+        this.an = an;
     }
 
     public void adaugaStudenti(Student s) {

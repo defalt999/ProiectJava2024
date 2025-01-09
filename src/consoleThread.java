@@ -5,6 +5,7 @@ import claseFunctionalitate.FileDataManager;
 import claseFunctionalitate.FileDisplay;
 import claseFunctionalitate.authHandler;
 
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,28 +41,21 @@ class consoleThread extends Thread{
          if(response.equals("1")&&stud==true){
              authHandler.loginStud();
          }
-//         if(response.equals("1")&&prof==true){
-//             authHandler.loginProf()
-//         }
+        if(response.equals("1")&&prof==true) {
+            authHandler.loginProf();
+//        }
 //         if(response.equals("2")&&stud==true){
 //             authHandler.registerStud();
 //         }
 //         if(response.equals("2")&&prof==true){
 //             authHandler.registerProf();
 //         }
-//         if(response.equals("3")){
-//             System.exit(0);
-//         }
+            if (response.equals("3")) {
+                System.exit(0);
+            }
 
 
-
-
-
-
-
-
-
-
+        }
 
      }
 }

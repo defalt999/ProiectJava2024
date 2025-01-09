@@ -83,6 +83,7 @@ public class FileDataManager {
                 String desc=splituri[2];
                 Profesor deAdaugat = null;
                 int idprof=Integer.parseInt(splituri[3]);
+                int an=Integer.parseInt(splituri[4]);
 
                 for(Profesor p : profesors){
                     if(p.getId()==idprof){
@@ -91,7 +92,7 @@ public class FileDataManager {
                     }
                 }
 
-                Curs cursAdaugat=new Curs(id,nume,desc,deAdaugat);
+                Curs cursAdaugat=new Curs(id,nume,desc,deAdaugat,an);
                 cursuri.add(cursAdaugat);
                 linie=brcurs.readLine();
             }
