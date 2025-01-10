@@ -40,7 +40,7 @@ public class authHandler {
         for(Profesor profesor:profesorsList){
             if(profesor.getUsername().equals(username) && profesor.getPassword().equals(password)){
                 System.out.println("Login Successful as "+profesor.getNume()+" "+profesor.getPrenume());
-                TeacherDashboard dash=new TeacherDashboard();
+                TeacherDashboard dash=new TeacherDashboard(profesor.getNume(),profesor.getPrenume());
             }
         }
 

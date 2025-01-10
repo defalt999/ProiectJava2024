@@ -11,15 +11,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", nume='" + nume + '\'' +
-                ", prenume='" + prenume + '\'' +
-                ", grupa='" + grupa + '\'' +
-                ", an=" + an +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return id+" "+nume+" "+prenume+" "+grupa+" "+"an "+an;
     }
 
     public Student(int id, String nume, String prenume, String grupa, int an, String username, String password) {
