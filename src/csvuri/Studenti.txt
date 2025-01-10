@@ -2,3 +2,4 @@ Id,Nume,Prenume,An,Username,Password
 1,Ionescu,Andrei,Grupa1,1,ionescu.andrei@gmail.com,andrei
 2,Popescu,Maria,Grupa2,3,popescu.maria@gmail.com,maria
 3,Popa,Ioana,Grupa1,2,popa.ioana@gmail.com,ioana
+

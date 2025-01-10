@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class TeacherDashboard {
     public FileDataManager fileDataManager;
+    public FileDisplay fileDisplay;
     String name;
     String surname;
     int idProf;
@@ -18,6 +19,7 @@ public class TeacherDashboard {
 
     public TeacherDashboard(String nume,String prenume){
         fileDataManager = new FileDataManager();
+        fileDisplay = new FileDisplay();
         List<Curs> cursList=fileDataManager.createCoursesData();
         List<Profesor> profesorList=fileDataManager.createProfesorData();
         name = nume;
@@ -100,8 +102,6 @@ public class TeacherDashboard {
                             }
                         }
                     }
-
-
                 }run();
 
         }

@@ -10,9 +10,12 @@ import java.util.Scanner;
 public class authHandler {
 
     private static FileDataManager fileDataManager;
+    private static FileDisplay fileDisplay;
 
-    public authHandler(FileDataManager fileDataManager) {
+    public authHandler(FileDataManager fileDataManager,FileDisplay fileDisplay) {
+
         this.fileDataManager = fileDataManager;
+        this.fileDisplay = fileDisplay;
     }
 
 
@@ -43,6 +46,39 @@ public class authHandler {
                 TeacherDashboard dash=new TeacherDashboard(profesor.getNume(),profesor.getPrenume());
             }
         }
+
+    }
+
+    public static void registerStud() {
+        List<Student> studentList=fileDataManager.createStudentsData();
+        int studCount=studentList.size()+1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your STUDENT name");
+        String name=scanner.nextLine();
+        System.out.println("Enter your STUDENT surname");
+        String surname=scanner.nextLine();
+        System.out.println("Enter your STUDENT group");
+        String group=scanner.nextLine();
+        System.out.println("Enter your STUDENT year");
+        int year=Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter your STUDENT username");
+        String username=scanner.nextLine();
+        System.out.println("Enter your STUDENT password");
+        String password=scanner.nextLine();
+        Student deAdaugat=new Student(studCount,name,surname,group,year,username,password);
+        studentList.add(deAdaugat);
+        Student[] aux = new Student[studentList.size()];
+        int contor=0;
+        for(Student student:studentList){
+            aux[contor]=student;
+            contor++;
+        }
+        fileDisplay.displayStudents(aux);
+        //Adauga inca o functie sa scrie un set de note la toate cursurile cu null
+        //Adaugat register pt profesori
+
+
+
 
     }
 }

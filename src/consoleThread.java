@@ -17,7 +17,7 @@ class consoleThread extends Thread{
          List<Student> studentList = fileDataManager.createStudentsData();
          List<Profesor> profesorList=fileDataManager.createProfesorData();
          List<Curs> cursList=fileDataManager.createCoursesData();
-         authHandler auth=new authHandler(fileDataManager);
+         authHandler auth=new authHandler(fileDataManager,fileDisplay);
          Scanner scanner = new Scanner(System.in);
          Boolean prof=false;
          Boolean stud=false;
@@ -43,9 +43,10 @@ class consoleThread extends Thread{
          }
         if(response.equals("1")&&prof==true) {
             authHandler.loginProf();
-//        }
-//         if(response.equals("2")&&stud==true){
-//             authHandler.registerStud();
+        }
+         if(response.equals("2")&&stud==true){
+             authHandler.registerStud();
+             run();
 //         }
 //         if(response.equals("2")&&prof==true){
 //             authHandler.registerProf();
