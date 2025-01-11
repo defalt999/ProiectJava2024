@@ -29,11 +29,11 @@ public class StudentDashboard {
         System.out.println("4.Lista restante");
         Scanner sc=new Scanner(System.in);
         String choice=sc.nextLine();
-
         switch(choice){
             case "1":
                 System.out.println("Specifica an");
                 choice=sc.nextLine();
+                //Eram mort cand am fct switchu asta si vreau sa il las asa
                 switch(choice){
                     case "1":
                         for(Curs curs:cursList){
