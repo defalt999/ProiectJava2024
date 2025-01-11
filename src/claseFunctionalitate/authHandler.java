@@ -74,8 +74,40 @@ public class authHandler {
             contor++;
         }
         fileDisplay.displayStudents(aux);
+        fileDisplay.registerToCourses(deAdaugat);
+        loginStud();
+
         //Adauga inca o functie sa scrie un set de note la toate cursurile cu null
         //Adaugat register pt profesori
+
+
+
+
+    }
+
+    public static void registerProf(){
+        List<Profesor> profList=fileDataManager.createProfesorData();
+        int profCount=profList.size()+1;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your PROFESOR name");
+        String name=scanner.nextLine();
+        System.out.println("Enter your PROFESOR surname");
+        String surname=scanner.nextLine();
+        System.out.println("Enter your PROFESOR username");
+        String username=scanner.nextLine();
+        System.out.println("Enter your PROFESOR password");
+        String password=scanner.nextLine();
+        Profesor deAdaugat=new Profesor(profCount,name,surname,username,password);
+        profList.add(deAdaugat);
+        Profesor[] aux = new Profesor[profList.size()];
+        int contor=0;
+        for(Profesor profesor:profList){
+            aux[contor]=profesor;
+            contor++;
+        }
+        fileDisplay.displayTeachers(aux);
+        loginProf();
+
 
 
 

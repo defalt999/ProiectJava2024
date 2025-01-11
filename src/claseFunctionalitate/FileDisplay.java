@@ -8,6 +8,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+;
 
 public class FileDisplay {
     public void displayStudents(Student[] students){
@@ -38,10 +44,43 @@ public class FileDisplay {
         }
 
     }
-    public void displayCourses(Curs[] cursuri){
+    public void displayNote(Curs[] cursuri){
+        File fisier=new File("D:\\IntelijProiecte\\ProiectJava2024\\src\\csvuri\\Note.txt");
+        FileDataManager fileDataManager=new FileDataManager();
+        List<Curs> cursList=fileDataManager.createCoursesData();
+        try {
+            BufferedWriter bw=new BufferedWriter(new FileWriter(fisier,false));
+            bw.write("IdCurs,IdStudent,Nota\n");
+            for(Curs curs : cursuri){
+                Set<Student> sList= curs.getStudenti();
+                Map<Student,Integer> note=curs.getNote();
+                for(Student student : sList){
+                    bw.write(curs.getId()+","+student.getId()+","+ note.get(student)+"\n");
+                }
+
+
+            }
+            bw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
+    public void registerToCourses(Student s){
+        File fisier=new File("D:\\IntelijProiecte\\ProiectJava2024\\src\\csvuri\\Note.txt");
+        FileDataManager fileDataManager=new FileDataManager();
+        List<Curs> cursList=fileDataManager.createCoursesData();
 
-
-
+        try {
+            BufferedWriter bw=new BufferedWriter(new FileWriter(fisier,true));
+            for(Curs curs : cursList){
+                if(curs.getAn() == s.getAn()){
+                    bw.write(curs.getId()+","+s.getId()+","+"null"+"\n");
+                }
+            }
+            bw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

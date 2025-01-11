@@ -47,10 +47,10 @@ class consoleThread extends Thread{
          if(response.equals("2")&&stud==true){
              authHandler.registerStud();
              run();
-//         }
-//         if(response.equals("2")&&prof==true){
-//             authHandler.registerProf();
-//         }
+         }
+         if(response.equals("2")&&prof==true){
+             authHandler.registerProf();
+         }
             if (response.equals("3")) {
                 System.exit(0);
             }
@@ -59,4 +59,4 @@ class consoleThread extends Thread{
         }
 
      }
-}
+

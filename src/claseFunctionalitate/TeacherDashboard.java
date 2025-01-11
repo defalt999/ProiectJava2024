@@ -99,10 +99,21 @@ public class TeacherDashboard {
                                 int nota= Integer.parseInt(sc.nextLine());
                                 curs.getNote().put(s,nota);
 
+
+
                             }
                         }
                     }
-                }run();
+                }
+                Curs[] aux=new Curs[cursList.size()];
+                int contorrr=0;
+                for(Curs curs:cursList){
+                    aux[contorrr]=curs;
+                    contorrr++;
+                }
+                fileDisplay.displayNote(aux);
+
+                run();
 
         }
     }
