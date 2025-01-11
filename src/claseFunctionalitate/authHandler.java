@@ -2,6 +2,7 @@ package claseFunctionalitate;
 
 import claseBaza.Profesor;
 import claseBaza.Student;
+import guiForms.studDash;
 
 import java.sql.SQLOutput;
 import java.util.List;
@@ -33,6 +34,17 @@ public class authHandler {
             }
         }
     }
+    public static void loginStud(String user,String paswd ) {
+        List<Student> studentList=fileDataManager.createStudentsData();
+        for(Student student:studentList){
+            if(student.getUsername().equals(user) && student.getPassword().equals(paswd)){
+                System.out.println("Login Successful as "+student.getNume()+" "+student.getPrenume());
+                studDash dash=new studDash(student);
+
+            }
+        }
+
+    }
     public static void loginProf() {
         List<Profesor> profesorsList=fileDataManager.createProfesorData();
         Scanner scanner = new Scanner(System.in);
@@ -46,6 +58,17 @@ public class authHandler {
                 TeacherDashboard dash=new TeacherDashboard(profesor.getNume(),profesor.getPrenume());
             }
         }
+
+    }
+    public static void loginProf(String user,String paswd ) {
+        List<Profesor> profesorsList=fileDataManager.createProfesorData();
+        for(Profesor profesor:profesorsList){
+            if(profesor.getUsername().equals(user) && profesor.getPassword().equals(paswd)){
+                System.out.println("Login Successful as "+profesor.getNume()+" "+profesor.getPrenume());
+
+            }
+        }
+
 
     }
 
@@ -77,8 +100,6 @@ public class authHandler {
         fileDisplay.registerToCourses(deAdaugat);
         loginStud();
 
-        //Adauga inca o functie sa scrie un set de note la toate cursurile cu null
-        //Adaugat register pt profesori
 
 
 
