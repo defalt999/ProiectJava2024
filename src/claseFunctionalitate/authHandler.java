@@ -2,6 +2,7 @@ package claseFunctionalitate;
 
 import claseBaza.Profesor;
 import claseBaza.Student;
+import guiForms.profDash;
 import guiForms.studDash;
 
 import java.sql.SQLOutput;
@@ -63,7 +64,8 @@ public class authHandler {
         List<Profesor> profesorsList=fileDataManager.createProfesorData();
         for(Profesor profesor:profesorsList){
             if(profesor.getUsername().equals(user) && profesor.getPassword().equals(paswd)){
-                System.out.println("Login Successful as "+profesor.getNume()+" "+profesor.getPrenume());
+                profDash dash=new profDash(profesor);
+
 
             }
         }

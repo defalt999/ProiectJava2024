@@ -74,5 +74,55 @@ public class studDash extends JFrame {
 
             }
         });
+        calculeazaMediaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double medie=0;
+                int contor=0;
+                for(Curs curs:cursList){
+                    Set<Student> studenti=curs.getStudenti();
+                    Map<Student,Integer> noteDeAfisat;
+                    for(Student s : studenti){
+                        if(s.getId()==student.getId()){
+                            noteDeAfisat=curs.getNote();
+                            medie=medie+noteDeAfisat.get(s);
+                            contor++;
+                        }
+
+                    }
+                }
+                JOptionPane.showMessageDialog(null,"Media este: "+medie/contor);
+
+
+            }
+        });
+        verificaRestanteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int contor=0;
+                StringBuilder deAfis=new StringBuilder();
+                deAfis.append("Esti restant la cursurile: \n");
+                for(Curs curs:cursList){
+                    Set<Student> studenti=curs.getStudenti();
+                    Map<Student,Integer> noteDeAfisat;
+                    for(Student s : studenti){
+                        if(s.getId()==student.getId()){
+                            noteDeAfisat=curs.getNote();
+                            if(noteDeAfisat.get(s)<5){
+                                contor++;
+                                deAfis.append(curs.getNume()+" Profesor "+curs.getProfesor().getNume()+" "+curs.getProfesor().getPrenume()+"\n");
+                            }
+
+                        }
+
+                    }
+                }
+                if(contor==0){
+                    deAfis.append("Nu ai restante!");
+                }
+                JOptionPane.showMessageDialog(null,deAfis);
+
+            }
+        });
     }
 }

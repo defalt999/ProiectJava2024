@@ -5,5 +5,7 @@ FOR CONSOLE:
     -nothing
 
 FOR GUI:
-    -main dash(prof/stud)
-        -everything
+    -for teacher dash:
+        -arata cursuri predate
+        -arata studentii unui curs
+        -noteaza studs
