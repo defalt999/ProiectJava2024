@@ -38,7 +38,6 @@ public class authHandler {
         List<Student> studentList=fileDataManager.createStudentsData();
         for(Student student:studentList){
             if(student.getUsername().equals(user) && student.getPassword().equals(paswd)){
-                System.out.println("Login Successful as "+student.getNume()+" "+student.getPrenume());
                 studDash dash=new studDash(student);
 
             }
@@ -105,6 +104,20 @@ public class authHandler {
 
 
     }
+    public static void registerStud(String name,String surname,String group,int year,String username,String password) {
+        List<Student> studentList=fileDataManager.createStudentsData();
+        int studCount=studentList.size()+1;
+        Student deAdaugat=new Student(studCount,name,surname,group,year,username,password);
+        studentList.add(deAdaugat);
+        Student[] aux = new Student[studentList.size()];
+        int contor=0;
+        for(Student student:studentList){
+            aux[contor]=student;
+            contor++;
+        }
+        fileDisplay.displayStudents(aux);
+        fileDisplay.registerToCourses(deAdaugat);
+    }
 
     public static void registerProf(){
         List<Profesor> profList=fileDataManager.createProfesorData();
@@ -128,9 +141,19 @@ public class authHandler {
         }
         fileDisplay.displayTeachers(aux);
         loginProf();
-
-
-
+    }
+    public static void registerProf(String nume,String prenume,String username,String password) {
+        List<Profesor> profList=fileDataManager.createProfesorData();
+        int profCount=profList.size()+1;
+        Profesor deAdaugat=new Profesor(profCount,nume,prenume,username,password);
+        profList.add(deAdaugat);
+        Profesor[] aux = new Profesor[profList.size()];
+        int contor=0;
+        for(Profesor profesor:profList){
+            aux[contor]=profesor;
+            contor++;
+        }
+        fileDisplay.displayTeachers(aux);
 
 
     }

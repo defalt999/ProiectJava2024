@@ -15,31 +15,27 @@
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <component id="bcc30" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="fcbf1" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="fcbf1" class="javax.swing.JTextField" binding="usernameField">
         <constraints>
           <grid row="4" column="1" row-span="4" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
-      <component id="33abb" class="javax.swing.JTextField" binding="textField3" default-binding="true">
+      <component id="33abb" class="javax.swing.JTextField" binding="yearField">
         <constraints>
           <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
-      <component id="96d99" class="javax.swing.JTextField" binding="textField4" default-binding="true">
+      <component id="96d99" class="javax.swing.JTextField" binding="passwordField">
         <constraints>
           <grid row="4" column="3" row-span="4" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -47,21 +43,25 @@
         </constraints>
         <properties/>
       </component>
-      <component id="1fb97" class="javax.swing.JTextField" binding="textField5" default-binding="true">
+      <component id="1fb97" class="javax.swing.JTextField" binding="surnameField">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
-      <component id="204f5" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="204f5" class="javax.swing.JTextField" binding="nameField">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="16a6a" class="javax.swing.JLabel" binding="label1">
         <constraints>
@@ -125,6 +125,16 @@
         </constraints>
         <properties>
           <text value="Password"/>
+        </properties>
+      </component>
+      <component id="c64b9" class="javax.swing.JTextField" binding="groupField">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
         </properties>
       </component>
     </children>

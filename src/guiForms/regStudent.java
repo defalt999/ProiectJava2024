@@ -3,20 +3,23 @@ package guiForms;
 import claseBaza.Student;
 import claseFunctionalitate.FileDataManager;
 import claseFunctionalitate.FileDisplay;
+import claseFunctionalitate.authHandler;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class regStudent extends JFrame {
-    private JTextField textField1;
-    private JPasswordField passwordField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField nameField;
+    private JTextField usernameField;
+    private JTextField yearField;
+    private JTextField passwordField;
+    private JTextField surnameField;
     private JLabel label1;
     private JButton registerButton;
     private JPanel mainPanel;
+    private JTextField groupField;
 
     public regStudent(){
         setTitle("ProiectJava");
@@ -29,5 +32,20 @@ public class regStudent extends JFrame {
         FileDisplay fileDisplay = new FileDisplay();
         List<Student> studs = fileDataManager.createStudentsData();
 
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nume=nameField.getText();
+                String surname=surnameField.getText();
+                String group=groupField.getText();
+                String year=yearField.getText();
+                int an=Integer.parseInt(year);
+                String username=usernameField.getText();
+                String password=passwordField.getText();
+                authHandler.registerStud(nume,surname,group,an,username,password);
+                JOptionPane.showMessageDialog(null,"Registered succesfuly!");
+                dispose();
+            }
+        });
     }
 }
